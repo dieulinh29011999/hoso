@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Edit User: {{$user->name}}</h1>
+            <h1>Edit User: {{$user->hoten}}</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -43,7 +43,7 @@
                 <div class="card-body">
                  <div class="form-group">
                     <label for="exampleName">User Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="name" name="name" value="{{$user->name}}">
+                    <input type="text" class="form-control" id="tenuser" placeholder="name" name="tenuser" value="{{$user->tenuser}}">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
@@ -58,17 +58,12 @@
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="confirmPassword" name="confirm-password">
                   </div>
                   <div class="form-group">
-                    <label for="exampleDanhso">Danh số</label>
-                    <input type="text" class="form-control" id="danhso" placeholder="" name="danhso" value="{{$user->danhso}}">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleTen">Họ tên</label>
-                    <input type="text" class="form-control" id="hoten" placeholder="" name="hoten" value="{{$user->hoten}}">
+                    <label for="exampleDanhso">Mã thủ thư</label>
+                    <input type="text" class="form-control" id="mauser" placeholder="" name="mauser" value="{{$user->mauser}}">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputFile">Input avatar</label>
                         <input type="file" class="form-control" name="avatar" >
-                      
                   </div>
                   <div class="form-group">
                     <strong>Role:</strong>

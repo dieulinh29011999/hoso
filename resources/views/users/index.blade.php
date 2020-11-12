@@ -48,10 +48,10 @@
                   <thead  style="background-color:#b4a647">
                     <tr>
                       <th>ID</th>
-                      <th>name</th>
+                      <th>Tên Người Dùng</th>
                       <th>email</th>
-                      <th>Danh số</th>
-                      <th>avatar</th>
+                      <th>Mã Người Dùng</th>
+                      <th>Avatar</th>
                       <th>Roles</th>
                       <th>Thao tác</th>
                     </tr>
@@ -60,16 +60,16 @@
                       @foreach($data as $datas)
                     <tr>
                       <td>{{$datas->id}}</td>
-                      <td>{{$datas->name}}</td>
+                      <td>{{$datas->tenuser}}</td>
                       <td>{{$datas->email}}</td>
-                      <td>{{$datas->danhso}}</td>
+                      <td>{{$datas->mauser}}</td>
                       <td><img src="{{$datas->avatar}}" width="50px" class="img-circle"></td>
                       <td>
                         @if(!empty($datas->getRoleNames()))
                             @foreach($datas->getRoleNames() as $v)
                             <label class="badge badge-success">{{ $v }}</label>
                             @endforeach
-                        @endif
+                        @endif 
                     </td>
                       <td>
                         <a class="btn btn-info" href="{{ route('users.show',$datas->id) }}">Show</a>

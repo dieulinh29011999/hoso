@@ -27,6 +27,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles','RoleController');
     Route::resource('users','usercontroller');
     Route::resource('permissions','permissionController');
+    Route::resource('chinhanh','chinhanhController');
+    Route::resource('chucvu','chucvuController');
+    Route::resource('vitri','vitriController');
+    Route::resource('phongban','phongbanController');
+    
+    // Route::resource();
 });
 route::get('profile','HomeController@profile')->name('profile');
 route::post('profile-update','HomeController@profileUpdate')->name('profile-update');

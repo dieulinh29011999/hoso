@@ -60,8 +60,8 @@
       <form method="POST" action="{{ route('register') }}">
         @csrf
         <div class="input-group mb-3">
-        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Enter username">
-            @error('name')
+        <input id="tenuser" type="text" class="form-control @error('tenuser') is-invalid @enderror" name="tenuser" value="{{ old('tenuser') }}" required autocomplete="tenuser" autofocus placeholder="Enter username">
+            @error('tenuser')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -107,33 +107,17 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-              <label for="agreeTerms" style="color: white">
-               I agree to the <a href="#">terms</a>
-              </label>
-            </div>
+          <div class="col-4">
           </div>
           <!-- /.col -->
           <div class="col-4">
             <button type="submit" class="btn btn-primary btn-block">Register</button>
           </div>
           <!-- /.col -->
+          <div class="col-4">
+          </div>
         </div>
       </form>
-
-      <div class="social-auth-links text-center">
-        <p style="color: #dd2c00">- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i>
-          Sign up using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i>
-          Sign up using Google+
-        </a>
-      </div>
 
       <a href="login" class="text-center">I already have a membership</a>
     </div>

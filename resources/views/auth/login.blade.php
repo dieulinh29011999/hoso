@@ -88,48 +88,17 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember"  style="color: white">
-                Remember Me
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
           </div>
           <!-- /.col -->
-        </div>
-      </form>
-
-      <div class="social-auth-links text-center mb-3">
-        <p  style="color: #dd2c00">- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
-      </div>
       <!-- /.social-auth-links -->
       <div class="form-group row mb-0">
         <div class="col-md-8 offset-md-4">
             <button type="submit" class="btn btn-primary">
                 {{ __('Login') }}
             </button>
-
-            @if (Route::has('password.request'))
-                <a class="btn btn-link" href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
-                </a>
-            @endif
         </div>
     </div>
-      <p class="mb-1">
-        <a href="forgot-password">I forgot my password</a>
-      </p>
       <p class="mb-0">
         <a href="register" class="text-center">Register a new membership</a>
       </p>
