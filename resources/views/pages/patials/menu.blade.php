@@ -310,30 +310,30 @@
             </ul>
           </li>
           <li class="nav-item has-treeview">
-            <a href={{route('vitri.index')}} class="nav-link {{Request::is('vitri') ? 'active' : '' }}">
+            <a href={{route('nhanvien.index')}} class="nav-link {{Request::is('nhanvien') ? 'active' : '' }}">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Vị Trí
+                Nhân Viên
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('vitri.index')}}" class="nav-link {{Request::is('vitri/index') ? 'active' : '' }}">
+                <a href="{{route('nhanvien.index')}}" class="nav-link {{Request::is('nhanvien/index') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List Vị Trí</p>
+                  <p>List Nhân Viên</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('vitri.create')}}" class="nav-link {{Request::is('vitri/create') ? 'active' : '' }}">
+                <a href="{{route('nhanvien.create')}}" class="nav-link {{Request::is('nhanvien/create') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Create Vị Trí</p>
+                  <p>Create Nhân Viên</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
-            <a href={{route('vitri.index')}} class="nav-link {{Request::is('vitri') ? 'active' : '' }}">
+            <a href={{route('loaihoso.index')}} class="nav-link {{Request::is('loaihoso') ? 'active' : '' }}">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Vị Trí
@@ -342,13 +342,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('vitri.index')}}" class="nav-link {{Request::is('vitri/index') ? 'active' : '' }}">
+                <a href="{{route('loaihoso.index')}}" class="nav-link {{Request::is('loaihoso/index') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List Vị Trí</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('vitri.create')}}" class="nav-link {{Request::is('vitri/create') ? 'active' : '' }}">
+                <a href="{{route('loaihoso.create')}}" class="nav-link {{Request::is('loaihoso/create') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create Vị Trí</p>
                 </a>

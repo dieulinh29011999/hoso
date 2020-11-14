@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\NhanVien;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class nhanvienController extends Controller
 {
@@ -11,9 +14,11 @@ class nhanvienController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $nhanvien = NhanVien::orderBy('id', 'ASC')->paginate(5);
+        return view('nhanvien.index', compact('nhanvien'))
+            ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -23,7 +28,10 @@ class nhanvienController extends Controller
      */
     public function create()
     {
-        //
+        $phongban = DB::table('phongban')->get();
+        $chucvu = DB::table('chucvu')->get();
+        $user = DB::table('users')->get();
+        return view('nhanvien.create',compact('phongban','chucvu','user'));
     }
 
     /**
@@ -34,7 +42,27 @@ class nhanvienController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'manhanvien'=>'required',
+            'tennhanvien'=>'required',
+            'id_phongban'=>'required',
+            'id_chucvu'=>'required',
+            // 'id_user'=>'required',
+        ],
+        [
+            'required'=>':attribute không được bỏ trống ',
+            'unique'=>':attribute phải là duy nhất',
+        ],
+        [
+            'manhanvien'=>'Mã Phòng Ban',
+            'tennhanvien'=>'Tên Phòng Ban',
+            'id_phongban'=>'Phòng Ban',
+            'id_chucvu'=>'Chức Vụ',
+            // 'id_user'=>'Tên tài khoản',
+        ]);
+        $input = $request->all();
+        $nhanvien = NhanVien::create($input);
+        return redirect()->route('nhanvien.index')->with('success','Đã thêm thành công nhân viên ');
     }
 
     /**

@@ -5,15 +5,15 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-8" >
-            <h1>BOOKS TABLE</h1>
+            <h1>BẢNG LOẠI SÁCH</h1>
           </div>
           <div class="col-sm-2">
-            <a class="btn btn-success" href="{{ route('nhanvien.create') }}"> Create New Book</a>
+            <a class="btn btn-success" href="{{ route('loaihoso.create') }}">Tạo loại sách</a>
           </div>
           <div class="col-sm-2">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('nhanvien.index')}}">Home</a></li>
-              <li class="breadcrumb-item active">nhanvien table</li>
+              <li class="breadcrumb-item"><a href="{{route('loaihoso.index')}}">Home</a></li>
+              <li class="breadcrumb-item active">Bảng loại sách</li>
             </ol>
           </div>
         </div>
@@ -47,47 +47,30 @@
                 <table class="table table-hover text-nowrap">
                   <thead  style="background-color:#b4a647">
                     <tr>
-                      <th>ID </th>
-                      <th>Mã nhân viên</th>
-                      <th>Tên nhân viên</th>
-                      <th>giới tính</th>
-                      <th>ngày sinh</th>
-                      <th>số điện thoại</th>
-                      <th>địa chỉ</th>
-                      <th>email</th>
-                      <th>phòng ban</th>
-                      <th>chức vụ</th>
-                      <th>tên user</th>
+                      <th>ID</th>
+                      <th>Mã Chức Vụ</th>
+                      <th>Tên Chức Vụ</th>
                       <th>Thao Tác</th>
                     </tr>
                   </thead>
                   <tbody>
-                      @foreach($nhanvien as $nhanviens)
+                      @foreach($loaihoso as $loaihosos)
                     <tr>
-                      <td>{{$nhanviens->id}}</td>
-                      <td>{{$nhanviens->manhanvien}}</td>
-                      <td>{{$nhanviens->tennhanvien}}</td>
-                      <td>{{$nhanviens->gioitinh}}</td>
-                      <td>{{$nhanviens->ngaysinh}}</td>
-                      <td>{{$nhanviens->sodienthoai}}</td>
-                      <td>{{$nhanviens->diachi}}</td>
-                      <td>{{$nhanviens->email}}</td>
-                      <td>{{$nhanviens->phongban->tenphongban}}</td>
-                      <td>{{$nhanviens->chucvu->tenchucvu}}</td>
-                      <td>{{$nhanviens->id_user}}</td>
-
+                      <td>{{$loaihosos->id}}</td>
+                      <td>{{$loaihosos->maloai}}</td>
+                      <td>{{$loaihosos->tenloai}}</td>
                       <td>
-                        <a class="btn btn-info" href="{{ route('nhanvien.show',$nhanviens->id) }}">Show</a>
-                        <a class="btn btn-primary" href="{{ route('nhanvien.edit',$nhanviens->id) }}">Edit</a>
-                            {!! Form::open(['method' => 'DELETE','route' => ['nhanvien.destroy', $nhanviens->id],'style'=>'display:inline']) !!}
-                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                        {{-- <a class="btn btn-info" href="{{ route('chucvu.show',$chucvus->id_theloai) }}">Show</a> --}}
+                        {{-- <a class="btn btn-primary" href="{{ route('chucvu.edit',$chucvus->id_theloai) }}">Edit</a> --}}
+                            {{-- {!! Form::open(['method' => 'DELETE','route' => ['chucvu.destroy', $chucvus->id_theloai],'style'=>'display:inline']) !!} --}}
+                                {{-- {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!} --}}
                             {!! Form::close() !!}
                       </td>
                     </tr>
                     @endforeach
                   </tbody>
                 </table>
-                {!! $nhanvien->links()!!}
+                {!! $loaihoso->links()!!}
               </div>
               <!-- /.card-body -->
             </div>

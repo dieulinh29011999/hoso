@@ -62,10 +62,10 @@
                       <td>{{$phongbans->tenphongban}}</td>
                       <td>{{$phongbans->chinhanh->tenchinhanh}}</td>
                       <td>
-                        <a class="btn btn-info" href="{{ route('users.show',$phongbans->id) }}">Show</a>
+                        {{-- <a class="btn btn-info" href="{{ route('users.show',$phongbans->id) }}">Show</a>
                         <a class="btn btn-primary" href="{{ route('users.edit',$phongbans->id) }}">Edit</a>
                             {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $phongbans->id],'style'=>'display:inline']) !!}
-                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!} --}}
                             {!! Form::close() !!}
                       </td>
                     </tr>

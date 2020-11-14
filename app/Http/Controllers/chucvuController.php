@@ -37,8 +37,8 @@ class chucvuController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
-            'machucvu'=>'required|unique:machucvu',
+        $this->validate($request,[
+            'machucvu'=>'required',
             'tenchucvu'=>'required'
         ],
         [

@@ -9,8 +9,8 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('books.index')}}">Home</a></li>
-              <li class="breadcrumb-item active"><a href="{{route('books.index')}}">User</a> </li>
+              <li class="breadcrumb-item"><a href="{{route('nhanvien.index')}}">Home</a></li>
+              <li class="breadcrumb-item active"><a href="{{route('nhanvien.index')}}">User</a> </li>
               <li class="breadcrumb-item active">Create book Form</li>
             </ol>
           </div>
@@ -40,45 +40,68 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{{route('books.store')}}" method="post" enctype="multipart/form-data">
+              <form role="form" action="{{route('nhanvien.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleid">Mã sách</label>
-                    <input type="text" class="form-control" id="id_masach" placeholder="Nhập mã sách" name="id_masach" value="{{old('id_masach')}}">
+                    <label for="exampleid">Mã </label>
+                    <input type="text" class="form-control" id="manhanvien" placeholder="Nhập mã nhân viên" name="manhanvien" value="{{old('manhanvien')}}">
                   </div>
                  <div class="form-group">
-                    <label for="exampleName">Tên sách</label>
-                    <input type="text" class="form-control" id="tensach" placeholder="Nhập tên sách" name="tensach" value="{{old('tensach')}}">
+                    <label for="exampleName">Tên nhân viên</label>
+                    <input type="text" class="form-control" id="tennhanvien" placeholder="Nhập tên nhân viên" name="tennhanvien" value="{{old('tennhanvien')}}">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Tác giả</label>
-                    <input type="text" class="form-control" id="tacgia" placeholder="Nhập tên tác giả" name="tacgia" value="{{old('tacgia')}}">
+                    <label for="exampleInputEmail1">Ngày Sinh</label>
+                    <input type="date" class="form-control" id="ngaysinh" placeholder="Nhập ngày sinh" name="ngaysinh" value="{{old('ngaysinh')}}">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Thể loại</label>
-                    <select name="id_benhvien" class="browser-default custom-select">
-                      @foreach($type as $value)
-                        <option value="{{$value->id_theloai}}" >{{$value->tentheloai}}</option>  
+                    <label for="exampleInputEmail1">địa chỉ</label>
+                    <input type="text" class="form-control" id="diachi" placeholder="Nhập địa chỉ" name="diachi" value="{{old('diachi')}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Số điện thoại</label>
+                    <input type="text" class="form-control" id="sodienthoai" placeholder="Nhập số điện thoại" name="sodienthoai" value="{{old('sodienthoai')}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Nhập email" name="email" value="{{old('email')}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleName">Giới Tính</label>
+                      <select name="gioitinh" id="gioitinh" class="form-control">
+                          <option value="1">Nam</option>
+                          <option value="0">Nữ</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">phòng ban</label>
+                    <select name="id_phongban" class="browser-default custom-select">
+                      <option value="">--Chọn phòng ban--</option>
+                      @foreach($phongban as $value)
+                        <option value="{{$value->id}}" >{{$value->tenphongban}}</option>  
                       @endforeach
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="exampleDanhso">Nhà Xuất Bản</label>
-                    <input type="text" class="form-control" id="nhaxuatban" placeholder="Nhập nhà xuất bản" name="nhaxuatban" value="{{old('nhaxuatban')}}">
+                    <label for="exampleInputEmail1">chức vụ</label>
+                    <select name="id_chucvu" class="browser-default custom-select">
+                      <option value="">--Chọn chức vụ--</option>
+                      @foreach($chucvu as $value)
+                        <option value="{{$value->id}}" >{{$value->tenchucvu}}</option>  
+                      @endforeach
+                    </select>
                   </div>
                   <div class="form-group">
-                    <label for="exampleNgaysinh">Năm xuất bản</label>
-                    <input type="text" class="form-control" id="namxuatban" placeholder="Nhập năm xuất bản" name="namxuatban" value="{{old('namxuatban')}}">
+                    <label for="exampleInputEmail1">Chọn tài khoản</label>
+                    <select name="id_user" class="browser-default custom-select">
+                      <option value="">--Chọn tài khoản--</option>
+                      @foreach($user as $value)
+                        <option value="{{$value->id}}" >{{$value->tenuser}}</option>  
+                        @endforeach
+                    </select>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputGioitinh">Số lượng</label>
-                    <input type="text" class="form-control" id="soluong" placeholder="Nhập số lượng" name="soluong" value="{{old('soluong')}}">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleNgaykham">Ngôn ngữ</label>
-                    <input type="text" class="form-control" id="ngonngu" placeholder="Nhập ngôn ngữ" name="ngonngu" value="{{old('ngonngu')}}">
-                  </div>
+                </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>

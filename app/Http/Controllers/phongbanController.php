@@ -41,8 +41,22 @@ class phongbanController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'maphongban'=>'required|unique:'
+            'maphongban'=>'required',
+            'tenphongban'=>'required',
+            'id_chinhanh'=>'required',
+        ],
+        [
+            'required'=>':attribute không được bỏ trống ',
+            // 'unique'=>':attribute phải là duy nhất',
+        ],
+        [
+            'maphongban'=>'Mã Phòng Ban',
+            'tenphongban'=>'Tên Phòng Ban',
+            'id_chinhanh'=>'Chi Nhánh',
         ]);
+        $input = $request->all();
+        $phongban = PhongBan::create($input);
+        return redirect()->route('phongban.index')->with('success','Đã thêm thành công phòng ban ');
     }
 
     /**

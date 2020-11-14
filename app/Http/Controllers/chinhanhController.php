@@ -39,9 +39,10 @@ class chinhanhController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
-            'machinhanh'=>'required|unique:machinhanh',
-            'tenchinhanh'=>'required'
+        $this->validate($request,[
+            'machinhanh'=>'required',
+            'tenchinhanh'=>'required',
+            'diachi'=>'required',
         ],
         [
             'required'=>':attribute không được bỏ trống ',
@@ -50,6 +51,7 @@ class chinhanhController extends Controller
         [
             'machinhanh'=>'mã chi nhánh',
             'tenchinhanh'=>'tên chi nhánh',
+            'diachi'=>'địa chỉ'
         ]
         );
         $input = $request->all();

@@ -8,7 +8,7 @@ class NhanVien extends Model
 {
     protected $table='nhanvien';
     public $timestamp = false;
-    protected $fillable=['manhanvien','tennhanvien','gioitinh','ngaysinh','sodienthoai','diachi','email','id_phongban','id_user','id_chuvu'];
+    protected $fillable=['manhanvien','tennhanvien','gioitinh','ngaysinh','sodienthoai','diachi','email','id_phongban','id_user','id_chucvu'];
     public function phongban(){
         return $this->belongsTo('App\PhongBan','id_phongban','id');
     }

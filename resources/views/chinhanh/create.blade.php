@@ -44,13 +44,17 @@
                 @csrf
                 <div class="card-body">
                  <div class="form-group">
-                    <label for="exampleName">Mã thể loại</label>
+                    <label for="exampleName">Mã chi nhánh</label>
                     <input type="text" class="form-control" id="machinhanh" placeholder="Mã chi nhánh" name="machinhanh" value="{{old('machinhanh')}}">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Tên loại</label>
+                    <label for="exampleInputEmail1">Tên chi nhánh</label>
                     <input type="text" class="form-control" id="tenchinhanh" placeholder="Tên loại" name="tenchinhanh" value="{{old('tenchinhanh')}}">
                   </div>                
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">địa chỉ</label>
+                    <input type="text" class="form-control" id="diachi" placeholder="Tên loại" name="diachi" value="{{old('diachi')}}">
+                  </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">

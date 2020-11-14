@@ -54,16 +54,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                      @foreach($chucvu as $chucvu)
+                      @foreach($chucvu as $chucvus)
                     <tr>
-                      <td>{{$chucvu->id}}</td>
-                      <td>{{$chucvu->machucvu}}</td>
-                      <td>{{$chucvu->tenchucvu}}</td>
+                      <td>{{$chucvus->id}}</td>
+                      <td>{{$chucvus->machucvu}}</td>
+                      <td>{{$chucvus->tenchucvu}}</td>
                       <td>
-                        <a class="btn btn-info" href="{{ route('chucvu.show',$chucvus->id_theloai) }}">Show</a>
-                        <a class="btn btn-primary" href="{{ route('chucvu.edit',$chucvus->id_theloai) }}">Edit</a>
-                            {!! Form::open(['method' => 'DELETE','route' => ['chucvu.destroy', $chucvus->id_theloai],'style'=>'display:inline']) !!}
-                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                        {{-- <a class="btn btn-info" href="{{ route('chucvu.show',$chucvus->id_theloai) }}">Show</a> --}}
+                        {{-- <a class="btn btn-primary" href="{{ route('chucvu.edit',$chucvus->id_theloai) }}">Edit</a> --}}
+                            {{-- {!! Form::open(['method' => 'DELETE','route' => ['chucvu.destroy', $chucvus->id_theloai],'style'=>'display:inline']) !!} --}}
+                                {{-- {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!} --}}
                             {!! Form::close() !!}
                       </td>
                     </tr>

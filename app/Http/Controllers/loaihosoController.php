@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\LoaiHoSo;
 use Illuminate\Http\Request;
 
 class loaihosoController extends Controller
@@ -11,9 +12,11 @@ class loaihosoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $loaihoso = LoaiHoSo::orderBy('id', 'ASC')->paginate(5);
+        return view('loaihoso.index', compact('loaihoso'))
+            ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -23,7 +26,7 @@ class loaihosoController extends Controller
      */
     public function create()
     {
-        //
+        return view('loaihoso.create');
     }
 
     /**
@@ -34,7 +37,22 @@ class loaihosoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'maloai'=>'required',
+            'tenloai'=>'required',
+            // 'id_user'=>'required',
+        ],
+        [
+            'required'=>':attribute không được bỏ trống ',
+        ],
+        [
+            'maloai'=>'Mã Phòng Ban',
+            'tenloai'=>'Tên Phòng Ban',
+            // 'id_user'=>'Tên tài khoản',
+        ]);
+        $input = $request->all();
+        $loaihoso = LoaiHoSo::create($input);
+        return redirect()->route('loaihoso.index')->with('success','Đã thêm thành công loại hồ sơ ');
     }
 
     /**

@@ -38,9 +38,9 @@ class vitriController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'mavitri'=>'required|unique:mavitri',
+            'mavitri'=>'required',
             'sotu'=>'required',
-            'soke'=>'requỉed',
+            'soke'=>'required',
             'songan'=>'required'
         ],
         [

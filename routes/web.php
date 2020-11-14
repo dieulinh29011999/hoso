@@ -31,6 +31,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('chucvu','chucvuController');
     Route::resource('vitri','vitriController');
     Route::resource('phongban','phongbanController');
+    Route::resource('nhanvien','nhanvienController');
+    Route::resource('loaihoso','loaihosoController');
+    Route::resource('loaiphong','loaiphongController');
+
     
     // Route::resource();
 });
