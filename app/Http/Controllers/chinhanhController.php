@@ -45,7 +45,7 @@ class chinhanhController extends Controller
         ],
         [
             'required'=>':attribute không được bỏ trống ',
-            'unique'=>':attribute phải là duy nhất',
+            // 'unique'=>':attribute phải là duy nhất',
         ],
         [
             'machinhanh'=>'mã chi nhánh',

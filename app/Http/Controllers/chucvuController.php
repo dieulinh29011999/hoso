@@ -43,7 +43,7 @@ class chucvuController extends Controller
         ],
         [
             'required'=>':attribute không được bỏ trống ',
-            'unique'=>':attribute phải là duy nhất',
+            // 'unique'=>':attribute phải là duy nhất',
         ],
         [
             'machucvu'=>'mã chức vụ',

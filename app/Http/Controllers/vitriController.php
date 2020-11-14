@@ -45,7 +45,7 @@ class vitriController extends Controller
         ],
         [
             'required'=>':attribute không được bỏ trống ',
-            'unique'=>':attribute phải là duy nhất',
+            // 'unique'=>':attribute phải là duy nhất',
         ],
         [
             'mavitri'=>'mã chức vụ',
